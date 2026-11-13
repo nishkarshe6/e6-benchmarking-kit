@@ -1,0 +1,4 @@
+name,sql
+store_sales_count,select count(*) from store_sales
+sales_by_year,"select d_year, count(*) as sales from store_sales join date_dim on ss_sold_date_sk = d_date_sk group by d_year order by d_year"
+top_items,"select i_item_id, sum(ss_net_paid) as revenue from store_sales join item on ss_item_sk = i_item_sk group by i_item_id order by revenue desc limit 10"
